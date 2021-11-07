@@ -62,7 +62,7 @@ func init() {
 func main() {
 
 	// stop signal channel which is triggered for SIGTERM or SIGINT
-	stopSignalCh := ctrl.SetupSignalHandler()
+	stopSignalCh := ctrl.SetupSignalHandler().Done()
 
 	// auto kube config discovery:
 	// out-of-cluster:

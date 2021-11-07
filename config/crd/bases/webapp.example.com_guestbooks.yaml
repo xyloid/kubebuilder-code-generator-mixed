@@ -36,13 +36,20 @@ spec:
           spec:
             description: GuestbookSpec defines the desired state of Guestbook
             properties:
-              foo:
-                description: Foo is an example field of Guestbook. Edit guestbook_types.go
-                  to remove/update
+              name:
+                description: Name of Guestbook.
                 type: string
             type: object
           status:
             description: GuestbookStatus defines the observed state of Guestbook
+            properties:
+              ok:
+                description: 'INSERT ADDITIONAL STATUS FIELD - define observed state
+                  of cluster Important: Run "make" to regenerate code after modifying
+                  this file is this guestbook ok?'
+                type: boolean
+            required:
+            - ok
             type: object
         type: object
     served: true
