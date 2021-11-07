@@ -10,7 +10,9 @@ curl -L -o kubebuilder https://go.kubebuilder.io/dl/latest/$(go env GOOS)/$(go e
 chmod +x kubebuilder && mv kubebuilder ~/bin/
 ```
 
-## Initialize project
+## Kubebuilder
+
+### Initialize project
 
 ```bash
 MODULE=example.com/foo-controller
@@ -19,9 +21,18 @@ kubebuilder init --domain example.com
 kubebuilder edit --multigroup=true
 ```
 
-## Generate Resources and Manifests
+### Generate Resources and Manifests
 
 ```bash
 kubebuilder create api --group webapp --version v1 --kind Guestbook
+
+make manifests
 ```
+
+
+## Code-generator
+
+### Prepare script
+
+
 
