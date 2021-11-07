@@ -34,5 +34,15 @@ make manifests
 
 ### Prepare script
 
+### Download code-generator
 
+check version in `go.mod`, for example `k8s.io/client-go v0.22.1`
+
+```bash
+K8S_VERSION=v0.22.1
+go get k8s.io/code-generator@$K8S_VERSION
+go mod vendor
+```
+
+### Update dependant version
 
