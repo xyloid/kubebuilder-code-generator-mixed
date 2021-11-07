@@ -4,4 +4,14 @@ layout:
 multigroup: true
 projectName: kubebuilder-mix-codegen-how-to
 repo: example.com/foo-controller
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: example.com
+  group: webapp
+  kind: Guestbook
+  path: example.com/foo-controller/apis/webapp/v1
+  version: v1
 version: "3"

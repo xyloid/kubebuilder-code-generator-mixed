@@ -19,3 +19,9 @@ kubebuilder init --domain example.com
 kubebuilder edit --multigroup=true
 ```
 
+## Generate Resources and Manifests
+
+```bash
+kubebuilder create api --group webapp --version v1 --kind Guestbook
+```
+
