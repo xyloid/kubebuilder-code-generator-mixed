@@ -135,6 +135,24 @@ func listExample(lister guestbooklisters.GuestbookLister) []*webappv1.Guestbook 
 }
 
 func clientsetExample(clientset *guestbookclientset.Clientset, guestbook *webappv1.Guestbook) {
+
+	gb := &webappv1.Guestbook{
+		TypeMeta: metav1.TypeMeta{
+			APIVersion: "webapp/v1",
+			Kind:       "Guestbook",
+		},
+		ObjectMeta: metav1.ObjectMeta{
+			Name:      "test-creation",
+			Namespace: "default",
+		},
+		Spec:   webappv1.GuestbookSpec{Name: "Test"},
+		Status: webappv1.GuestbookStatus{Ok: true}}
+
+	_, error := clientset.WebappV1().Guestbooks("default").Create(context.TODO(), gb, metav1.CreateOptions{})
+	if error != nil {
+		println(error)
+	}
+
 	// NEVER modify objects from the store. It's a read-only, local cache.
 	// You can use DeepCopy() to make a deep copy of original object and modify this copy
 	// Or create a copy manually for better performance
@@ -148,4 +166,5 @@ func clientsetExample(clientset *guestbookclientset.Clientset, guestbook *webapp
 	if err != nil {
 		println(err)
 	}
+
 }
