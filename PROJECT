@@ -1,0 +1,7 @@
+domain: example.com
+layout:
+- go.kubebuilder.io/v3
+multigroup: true
+projectName: kubebuilder-mix-codegen-how-to
+repo: example.com/foo-controller
+version: "3"
